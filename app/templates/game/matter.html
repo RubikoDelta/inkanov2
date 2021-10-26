@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+<div class="container">
+	<center><img src="{{url_for('static', filename='img/logoxs.png')}}" class="logo"></center>
+	<div class="row justify-content-center">
+
+		<div class="col-md-7 col-md-offset-1 box">
+			
+			<h3>Siguiente paso:</h3>
+			<p>Ahora se necesita seleccionar el curso o materia para el juego.</p>
+
+			<form class="" method="post">
+
+				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+				<div class="form-group">
+				{{ render_field(form.matters, class='form-control', placeholder='grado')  }}
+				
+				</div>
+				<center>
+				<button type="submit" class="btn btn-success" name="button">
+				Seleccionar materia
+				</button>
+				
+				<a href="{{ url_for('.select_grade') }}" class="btn btn-primary">Regresar</a></center>
+
+			</form>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,302 @@
+{% extends 'children_layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+{% block container %}
+
+
+
+    <header class="bg_animate">
+ 
+      <section class="banner contenedor">
+        <div class="container"> 
+
+         
+
+          <div class="row align-items-center">  
+            <div class="col-2 ">
+         
+             
+              <!-- Score 1-->
+              
+              
+              <div class="row "> 
+
+                <div class="col align-self-end cloud2">
+                    <center>
+                      <div class="bubbles">
+                        <h1 style="font-size: 15pt">{{ player1 }}</h1>
+                      </div><br>
+                      
+                  <label style="font-size: 20pt;"> puntos: {{ score1 }}</label>
+                  </center>
+                </div>
+              </div>
+
+
+              <!-- Imagen 1-->  
+              <div class="row">
+
+                <div class="banner_img">
+                  <img src="{{url_for('static', filename='img/ownart/ninalapiz.png')}}" class="img-fluid" alt="Responsive image"/>
+                </div>
+              </div> 
+          
+            </div>
+
+            <!-- Columna de enmedio -->
+            <div class="col ">
+
+              <!--- incio pregunta -->
+              <div class="container box">
+
+                <div class="row justify-content-md-center">
+
+                  <!--- Turno -->
+                  <div class="col-md-auto"> 
+
+                    <article>
+                     <h2 style="color: #1CA900"> <img src="{{url_for('static', filename='img/logoxs.png')}}" class="logo_min">
+                        {% if player == 1 %} 
+                          {{ player1 }} fue la mano más rápida
+                        {% endif %}  
+                        {% if player == 2 %}                     
+                         Turno de {{ player2 }}
+                        {% endif %} 
+                    </h2>
+                      
+                    </article>
+                  
+                  </div>    
+                </div> <!--- Fin turno -->
+              <div class="row justify-content-md-center"> 
+                
+                <div class="col-md-auto"> <br>
+                  <center><h2>Pregunta:</h2>
+                  <article>
+                      <h2 class="text">{{ question }} </h2>
+                    </article>
+                </div> </center>
+              </div><!--- Fin pregunta-->
+
+              <div class="row justify-content-md-center"> 
+                <br><br>
+                <div class="col-md-auto">
+                  <center>
+                  <button onclick="correcto()" class="btn btn-success" id="correcto">Correcto</button>
+
+              
+               <button onclick="incorrecto()" class="btn btn-danger" id="incorrecto">Incorrecto</button><br>
+               
+               
+               <button onclick="robo()" class="btn btn-warning" id="robo">¿
+               	{% if player == 1 %} 
+                {{ player2 }} 
+                {% endif %}  
+                {% if player == 2 %}                     
+                {{ player1 }}
+                {% endif %} 
+
+               quiere intentar robar?</button>
+
+
+
+                <button onclick="revelar()" class="btn btn-secondary" id="revelar">Revelar Respuesta</button>
+
+
+           </center>
+
+              </div><!--- Fin pregunta-->
+              
+          </div>
+
+               
+
+
+              <!--Inicio de Respuesta -->
+              <div class="box">
+                
+               
+             <center><h3>Respuesta:</h3></center>
+
+              <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                  <article>
+                  <h1 class="text"  id="respuesta">{{ answer }}</h1>
+                  </article>
+                </div>
+              </div>
+            </div>
+              <br>
+
+            <div class="row justify-content-md-center">
+              <div class="col-md-auto">
+                
+				<form class="" method="post">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+                  <button type="submit" class="btn btn-primary" name="boton" value="btn1" id="siguiente">Siguiente Pregunta</button><br>
+
+                  
+
+                  <button type="submit" class="btn btn-secondary" name="boton" value="btn3" id="ninguno">Siguiente pregunta</button>
+
+                </form>
+              </div>
+            </div>
+   
+
+            </div> <!--Fin Container-->
+
+        </div> <!--Fin columna de enmedio-->
+
+
+      <!--columna final-->
+    <div class="col-2">
+        
+         
+              <!-- Score 2-->
+              
+              
+              <div class="row "> 
+                <div class="col align-self-end cloud2">
+                    <center>
+                      <div class="bubbles">
+                        <h1 style="font-size: 15pt">{{ player2 }}</h1>
+                      </div><br>
+                      
+                  <label style="font-size: 20pt;"> puntos: {{ score2 }}</label>
+                  </center>
+                </div>
+              </div>
+
+
+
+              <!-- Imagen 2-->  
+              <div class="row">
+                <div class="banner_img">
+                  <img src="{{url_for('static', filename='img/ownart/ninoglobos.png')}}" class="img-fluid" alt="Responsive image"/>
+                </div>
+              </div> 
+
+    </div>
+
+</div>
+
+                        
+                    
+                      
+                 
+        
+              
+</div>
+    
+
+
+
+
+
+          
+
+
+        </section>
+
+        <div class="burbujas">
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+        </div>
+    </header>
+
+
+
+
+
+
+{% block scripts %}
+<script>
+ 
+ 
+  document.getElementById("respuesta").style.opacity = "0";
+  document.getElementById("siguiente").style.opacity = "0";
+
+  document.getElementById("revelar").style.opacity = "0";
+  document.getElementById("robo").style.opacity = "0";
+  document.getElementById("ninguno").style.opacity = "0";
+
+  function correcto() {
+  document.getElementById("respuesta").style.opacity = "1";
+  document.getElementById("siguiente").style.opacity = "1";
+  document.getElementById("correcto").style.opacity = "0";
+  document.getElementById("incorrecto").style.opacity = "0";
+  }
+
+   function incorrecto() {
+  document.getElementById("robo").style.opacity = "1";
+  document.getElementById("revelar").style.opacity = "1";
+  document.getElementById("correcto").style.opacity = "0";
+  document.getElementById("incorrecto").style.opacity = "0";
+  document.getElementById("o").style.opacity = "1";  
+  }
+
+  function revelar() {
+  document.getElementById("robo").style.opacity = "0";
+  document.getElementById("revelar").style.opacity = "0";
+  document.getElementById("respuesta").style.opacity = "1";
+  document.getElementById("ninguno").style.opacity = "1";
+  
+  } 
+
+
+    function robo() {
+    	{% if player == 1 %} 
+    	window.location.href = "{{ url_for('.steal1', player=2) }}";{% endif %}
+    	{% if player == 2 %} 
+    	window.location.href = "{{ url_for('.steal1', player=1) }}";{% endif %}
+  
+  } 
+
+  
+  function Temporizador(id, inicio, final){
+    this.id = id;
+    this.inicio = inicio;
+    this.final = final;
+    this.contador = this.inicio;
+
+
+    this.conteoSegundos = function(){
+      if (this.contador == this.final){
+        this.conteoSegundos = null;
+       document.getElementById("respuesta").style.opacity = "1";
+       document.getElementById("temporizador").style.opacity = "0";
+       document.getElementById("botones").style.opacity = "1";
+       document.getElementById("btn_revelar").style.opacity = "0";
+       
+        return;
+      }
+
+      document.getElementById(this.id).innerHTML = this.contador--;
+      setTimeout(this.conteoSegundos.bind(this), 1500);
+    };
+  }
+
+
+  let temporizador = new Temporizador('temporizador', time, 0);
+  temporizador.conteoSegundos();
+
+</script>
+
+
+{% endblock %}
+
+
+{% endblock %}
+
+
+

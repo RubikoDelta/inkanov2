@@ -1,0 +1,37 @@
+Nombre del Cuestionario: CULTURA GENERAL GUATEMALA
+Grado del Cuestionario: SEXTO
+Materia del Cuestionario: CIENCIAS SOCIALES
+Total de preguntas: 10
+
+Preguntas:
+
+1) ¿De qué árbol se fabrica la Marimba?
+Respuesta:Hormigo
+
+2) Durante su gobierno se decretó la unidad monetaria (Quetzal) en 1924. Incluso su rostro aparece en uno de los billetes ¿De quién hablamos?
+Respuesta:General José María Orellana
+
+3) ¿Quién es el autor de Luna de Xelajú?
+Respuesta:Francisco Pérez Muñoz
+
+4) Gran capitán quiché. Enfrentó al ejército invasor español en 1524. ¿Quién era?
+Respuesta:Tecún Umán
+
+5) ¿En qué municipio de Petén se encuentra el parque arqueológico Tikal?
+Respuesta:Flores
+
+6) También se le llama "Baile del Tun". Es la única danza prehispánica conocida en la América colonial que no fue destruida por los españoles.
+Respuesta:Rabinal Achí
+
+7) El 20 de octubre de 1944, hubo un alzamiento cívico-militar que derrocó a un presidente PROVISORIO. ¿De quién hablamos?
+Respuesta:Frederico Ponce Vaides
+
+8) ¿Qué tipo de flor es la Monja Blanca?
+Respuesta:Orquídea
+
+9)  El Volcán Tajumulco es el más alto de Guatemala y de Centroamérica. ¿En qué DEPARTAMENTO está ubicado?
+Respuesta:San Marcos
+
+10) Son los autores del Himno Nacional, el canto oficial dedicado a la patria.
+Respuesta:Rafael Álvarez Ovalle y José Palma
+

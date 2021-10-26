@@ -1,0 +1,355 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+<div class="container">
+	
+	<div class="row justify-content-center ">
+	    <div class="col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto align-self-center p-4">
+			    <h1><img src="{{url_for('static', filename='img/logoxs.png')}}"  class="logo_min img-fluid" alt="Responsive image">Primeros Pasos</h1>
+
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto align-self-center p-2">
+			<a class="btn btn-success px-3" href="#section1">Crear e ingresar con tu cuenta</a>
+				<a class="btn btn-danger px-3" href="#section2">Crear/editar/eliminar cuestionarios</a>
+				<a class="btn btn-info px-3" href="#section3">Jugar con un cuestionario</a>
+				<A name="section1"></A>
+			</div>
+	</div>
+
+
+	<div class="row justify-content-center ">
+	    <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 align-self-center p-4 box">
+			  
+
+			<ul class="list-group">
+			  
+			  <h4><li class="list-group-item list-group-item-success"> 
+			   Crear e ingresar con tu cuenta</li></h4>
+			  
+			   <h5>Regístrate en INKANO:</h5>
+			   <p align = "justify">Dirigete a la barra superior de navegación y oprime la opción de "Regístrate"</p>
+			  	<center><br>
+			   <img src="{{url_for('static', filename='img/help/registrate.png')}}" style="width: 200px" class="logo_min img-fluid" alt="Responsive image"><br>
+			   </center>
+			   <p align = "justify"><br>Llena el formulario y oprime el botón "Regístrate en INKANO. Si fue llenado correctamente te aparecera el mensaje: "Usuario Registrado Exitosamente"</p>
+			   <center>
+			   <img src="{{url_for('static', filename='img/help/registrolleno.png')}}" style="width: 300px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+				
+			   <h5>Iniciar sesión en INKANO:</h5>
+			   <p align = "justify">Ya teniendo un usuario lo siguiente es iniciar sesión para acceder a todas las funciones de inkano. Luego del registro la pagina te redirige automáticamente a la pagina de inicio de sesión.</p>
+			   <p align = "justify"> También podemos acceder por medio de la barra de navegación</p>
+			    <center>
+			   <img src="{{url_for('static', filename='img/help/loginlleno.png')}}" style="width: 300px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+
+			   <p align = "justify">Debemos llenar el formulario con los datos antes ingresados en la pagina de registro. Automaticamente el programa cargara la pagina de index.</p>
+
+			   <p align = "justify">Podemos observar que la barra de navegación tiene nuevas funciones.</p>
+
+			   			    <center>
+			   <img src="{{url_for('static', filename='img/help/barraInicioSesion.png')}}" style="width: 600px" class="logo_min img-fluid" alt="Responsive image">
+				<br><br>
+
+				<p>
+				<a href="#section1" class="btn btn-outline-primary">
+					Regresar al Inicio</a><br><br></p></center>
+
+				
+				
+				
+				
+				
+				
+				
+					<A name="section2"></A>
+			  <h4><li class="list-group-item list-group-item-danger">Crear/editar/eliminar cuestionarios</li></h4>
+			  
+			  <h5>Tus cuestionarios:</h5>
+			  <p align = "justify">Para observar los cuestionarios creados podemos trasladarnos desde la barra de navegación "Cuestionarios" o desde el botón verde en index llamado "Cuestionarios"</p>
+			  	  			   			    <center>
+			   <img src="{{url_for('static', filename='img/help/listallena.png')}}" style="width: 600px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+
+			  <p align = "justify">En esta pagina aparecerán los cuestionarios creados en una tabla. Si aun no has creado ningun cuestionario, la tabla solo contara con el encabezado.</p>
+
+			  	  			   			    <center>
+			   <img src="{{url_for('static', filename='img/help/listavacia.png')}}" style="width: 600px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+			  <h5>Crear Cuestionario:</h5>
+			  <p align = "justify">El primer botón que se observa es "Agregar Cuestionario" el cual como su nombre indica, sera el encargado de proporcionar la página de creacion de nuevos cuestionarios. En esta pagina nos pedirá los datos del formulario a crear.</p>
+
+			 <center>
+			   <img src="{{url_for('static', filename='img/help/newtest.png')}}" style="width: 300px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+			  <p align = "justify">Si los campos fueron llenados correctamente, el programa nos redirigirá a la pagina para llenar las preguntas. Si deseamos cancelar la creacion del cuestionario simplemente oprimimos "Cancelar cuestionario"</p>
+
+
+			 <center>
+			   <img src="{{url_for('static', filename='img/help/nuevapregunta.png')}}" style="width: 400px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+
+			  <h5>Ver y editar las preguntas del cuestionario:</h5>
+			  <p align = "justify">El siguiente botón es "Preguntas" que nos muestra las preguntas de dicho cuestionario además de dar la opción de editar cada una de las preguntas si se necesita.</p>
+
+			  <center>
+			   <img src="{{url_for('static', filename='img/help/editpreguntas.png')}}" style="width: 600px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+
+			  <h5>Editar cuestionario</h5>
+			  <p align = "justify">Con el botón "Editar" nos permite modificar los datos básicos del cuestionario como nombre, materia y grado.</p>
+
+			  <center>
+			   <img src="{{url_for('static', filename='img/help/editcuest.png')}}" style="width: 300px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+			  <h5>Eliminar o guardar cuestionario</h5>
+			  <p align = "justify">El botón "Eliminar" se encargara de borrar todo el cuestionario. Pero si no quieres perder dichos datos tenemos la opción de descargar dicho cuestionario con sus respectivas preguntas al oprimir "Descargar"</p>
+			  			  <center>
+			   <img src="{{url_for('static', filename='img/help/botoneslista.png')}}" style="width: 300px" class="logo_min img-fluid" alt="Responsive image">
+				<br><br>
+
+
+				<p>
+					<a href="#section1" class="btn btn-outline-primary">
+						Regresar al Inicio</a><br><br></p></center>
+	
+
+
+
+
+
+
+
+
+				<A name="section3"></A>
+			  <h4><li class="list-group-item list-group-item-info">Jugar con un cuestionario</li></h4>
+			  
+			  <h5>Juego nuevo:</h5>
+			  <p align = "justify">Para empezar una partida debemos ir a "Juego nuevo", ya sea desde el index o en la barra de navegación.</p>
+
+			  			  <center>
+			   <img src="{{url_for('static', filename='img/help/juegonuevoboton.png')}}" style="width: 250px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+			  <p align = "justify">En la siguiente pagina se observan dos opciones. Debes escoger uno de los dos modos de juego.</p>
+
+			  			  <center>
+			   <img src="{{url_for('static', filename='img/help/modo.png')}}" style="width: 300px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+			  <h6>Por turnos</h6>
+			  <p align = "justify">En este modo los jugadores tendrán un turno asignado para responder la pregunta del cuestionar que se esta jugando. Además contaran con un tiempo limite para responder. Si la respuesta es correcta, el moderador o docente encargado del juego tendrá que presionar el botón correspondiente.</p>
+
+
+			  <h6>Mano Rápida</h6>
+			  <p align = "justify">En este modo ambos jugadores tendrán la misma oportunidad de responder a las preguntas. Quien conteste se decide por medio de la velocidad del participante. Ambos participantes tendrán una tecla asignada.El que presione primero la tecla antes de que termine el tiempo, podrá responder primero. Si su respuesta es incorrecta, el rival podrá realizar un "robo" y tener la oportunidad de responder a la pregunta.</p>
+
+
+			  <h5>Seleccionar cuestionario </h5>
+			  <p align = "justify">Luego de escoger modo de juego lo siguiente es seleccionar el cuestionario a jugar. Primero se pedirá el grado, luego la materia y finalmente se escogerá el cuestionario anteriormente filtrado.</p>
+
+
+
+			    <center>
+			   <img src="{{url_for('static', filename='img/help/gradoselect.png')}}" style="width: 300px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+				 
+
+			  <h5>Ultimas configuraciones: </h5>
+			  <p align = "justify">Finalmente debemos introducir el nombre de los dos jugadores o nombre de los equipos que estarán compitiendo. También debemos definir el tiempo en segundos del temporizador. Solo nos queda escoger uno de los tres temas disponibles para jugar. </p>
+
+			  	<center>
+			   <img src="{{url_for('static', filename='img/help/ultimasconf.png')}}" style="width: 500px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+
+			  <h5>Modo: Por turnos </h5>
+			  <p align = "justify">Al momento de jugar, el sitio es muy intuitivo.<br>
+			  Si el alumno responde antes de que el tiempo se acaba tenemos la opción de revelar pregunta, así evitando perder tiempo. Sin embargo, si el tiempo termina la respuesta sera revelada y es tarea del mediador si el participante contesto dentro del tiempo y si las respuesta es correcta</p>
+
+			  <center>
+			   <img src="{{url_for('static', filename='img/help/jugando.png')}}" style="width: 700px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+			  <h5>Modo: Mano rápida</h5>
+			  <p align = "justify"> En este modo es igual de intuitivo. Se le indica a los jugadores que tecla oprimir. Para el "jugador 1" es la tecla del número 1, para el "jugador 2", es la tecla del numerro 2. Si ninguno de los dos responde, el juego asume que nadie sabe la respuesta y no suma puntos para nadie, además de revelar la respuesta a la pregunta</p>
+
+			  <center>
+			   <img src="{{url_for('static', filename='img/help/nadie.png')}}" style="width: 700px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+
+			  <p align = "justify">Si uno de los dos participantes presiona su tecla asignada, el programa lo detecta y menciona quien fue la mano más rápida, dejando el espacio para que responda. Si respode correctamente o no, el mediador presionara el botón adecuado. Si fue correcto se le sumara el punto al jugador.</p>
+
+			  <center>
+			   <img src="{{url_for('static', filename='img/help/contesto.png')}}" style="width: 600px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+			  <p align = "justify">Pero en caso contrario, si la mano mas rápida, da una respuesta erronea, el programa le da la oportunidad al otro jugador de robar la pregunta o simplemente pasar a la siguiente, sin sumar puntos a los jugadores.</p>
+
+			<center>
+			   <img src="{{url_for('static', filename='img/help/contesto2.png')}}" style="width: 700px" class="logo_min img-fluid" alt="Responsive image">
+				</center><br>
+
+
+
+
+
+
+				<h4>Dispositivo físico para "Mano Rápida"</h4>
+				<p align = "justify">
+					
+
+					<h5>¿Qué es?</h5>
+
+                <p align = "justify">La finalidad de este objeto físico es tener una manera más dinámica y divertida para jugar el modo "mano rápida", logrando una interacción directa con los jugadores y la herramienta. El dispositivo se usará como dos botones físicos. Estos seran usados por los dos jugadores o equipos participantes, quienes deben oprimir su botón correspondiente para tener la oportunidad de responder antes.</p>
+                
+                 <br><br>
+                 <center>
+					<p>
+                <img src="{{url_for('static', filename='img/help/teclado5.png')}}" style="width: 450px" class="logo_min img-fluid" alt="Responsive image">
+              </center>
+                
+                </p>
+                
+                <p align = "justify">Dicho dispositivo está hecho con un teclado reciclado, tecnología de impresión 3D y un poco de creatividad. </p>
+
+				
+			  <h4>
+                  Crear tu propio dispositivo</h4>
+			  
+<h5> Recursos a utilizar: </h5><p>
+<ol>
+    <li>teclado para reciclar.</li>
+    <li>modelo 3D de los dos botones. </li>
+    <li>servicio de impresión 3D.</li>
+    <li>Material para pegar o asegurar como silicona o cinta doble cara.</li>
+    <li>Una hoja tamaño oficio de un papel duro como lino o cartón delgado reciclado.</li>
+  </ol>
+  <p><br>
+NOTA: Si no tienes a tu disponibilidad el servicio de impresora 3D más adelante te damos otras alternativas para sustituir.
+</p>
+</p>
+  
+
+  <h5> Recursos que puedes descargar:</h5> 
+
+<p>
+  <ol>
+    <li>pack de calcomanías INKANO</li>
+    <li>fondo de patrón INKANO</li>
+    <li>diseños de botones para imprimir (Estos pueden ser modificados y distribuidos libremente)</li>
+  </ol>
+</p>
+
+<p> <center><img src="{{url_for('static', filename='img/calcomanias.png')}}" style="width: 300px" class="logo_min img-fluid" alt="Responsive image"></p></center>
+		
+
+
+<a name='section4'></a>
+<h5>Los recursos están disponibles en el siguiente enlace:</h5> 
+<br><br><center>
+<a target="_blank" href="https://drive.google.com/drive/folders/1ytswEAIuU1ZSSNWcTdGrCj-9NQVgcNec?usp=sharing"><img src="{{url_for('static', filename='img/descarga.png')}}"/></a>
+<br><br></center>
+
+<h5>Pasos:</h5>
+
+
+    <ol >
+      <li ><p align = "justify">Ya teniendo el teclado a reciclar lo primero es quitar la mayoría de sus teclas. Solo se debe dejar la tecla "S" y la tecla "L".<br><br>
+
+        
+        Se debe limpiar el teclado si en dado caso se necesite. El teclado debe quedar como la imagen de 
+        referencia a continuación.</p></li><br>
+        <br><center>
+        <img src="{{url_for('static', filename='img/help/teclado1.png')}}" style="width: 500px" class="logo_min img-fluid" alt="Responsive image">
+      </center>
+        <br><br>
+      <li><p align = "justify">Para mejorar el aspecto del dispositivo, medimos el rectángulo vació de nuestro teclado y recortamos nuestra hoja de lino o cartón para que encaje lo mejor posible en el área vacía del teclado. Recuerda también que debes cortar el espacio de las teclas que dejamos en dicho teclado. En este ejemplo se usó papel lino y se le agregó papel calcomanía que tenía impreso con el fondo que se proporciona en la carpeta de descarga. Ya tapado las partes sin teclas, el papel o cartón estará apoyado en las partes donde iban sujetas las teclas retiradas. Si quieres asegurarlo de una mejor manera puedes usar silicona caliente o cinta doble cara.</p></li><br>
+      <br><center>
+      <img src="{{url_for('static', filename='img/help/teclado2.png')}}" style="width: 500px" class="logo_min img-fluid" alt="Responsive image">
+    </center>
+      <br><br>
+      <li><p align = "justify">Si no tienes a tu disposición un servicio de impresión 3D, puedes encontrar otras alternativas como por ejemplo hacer los botones con duroport o foamy moldeable ¡el cielo es él limite! En la siguiente imagen se muestran las medidas si las necesitas.</p>
+        <br>
+        <br> <center><img src="{{url_for('static', filename='img/boton.png')}}" style="width: 500px" class="logo_min img-fluid" alt="Responsive image">
+         <br><br></center>
+         <p align = "justify"> Si tienes a tu disposición el servicio de impresión 3D el archivo con el diseño original de los botones está en la
+           <a href="#section4">carpeta de recursos</a> que se compartió anteriormente. Si quieres adaptar o modificar el diseño te dejamos el enlace a Tinkercad , la cual es una herramienta online para diseñar modelos 3D, una de sus ventajas es que no necesitas descargar ni instalar otros programa, solo se necesita registrarse en la página y podrás editar a tu gusto el diseño original del botón. Además te proporcionaremos una guía si necesitas ayuda para utilizar Tinkercad. </p>
+          <center>
+          <a target="_blank" href="https://www.tinkercad.com/things/jdzkWnoU4RZ"><img src="{{url_for('static', filename='img/edita.png')}}"/></a>
+          <br><br>
+          <a target="_blank" href="https://of3lia.com/tinkercad-tutorial-completo/"><img src="{{url_for('static', filename='img/guia.png')}}"/></a>
+          <br></center>
+         <br>
+         Ya con los botones hechos, pintados y personalizados (si se necesitó) estos irán encima de las teclas que dejamos descubiertas. 
+		 
+		 
+		<p> <center><img src="{{url_for('static', filename='img/help/teclado3.png')}}" style="width: 300px" class="logo_min img-fluid" alt="Responsive image"></p></center>
+		 
+		 Si usaste los modelos 3d estos se adaptaran de una mejor forma a las teclas, ya que en la parte inferior tienen una pequeña parte que sobresale. Esta es util para pegarlo más facilmente a la tecla, sin que ella oposición con las partes del teclado. 
+		 
+		 <p> <center><img src="{{url_for('static', filename='img/help/teclado4.png')}}" style="width: 300px" class="logo_min img-fluid" alt="Responsive image"></p></center>
+		
+		 
+		 
+		 Si hiciste tus propios botones, te recomendamos hacer lo mismo. Se deben pegar con silicona caliente o cinta doble cara por ejemplo. Ya asegurados los botones el dispositivo está listo para conectarlo a tu computadora y poder jugar "mano rápida".
+        
+		 <p> <center><img src="{{url_for('static', filename='img/help/teclado5.png')}}" style="width: 500px" class="logo_min img-fluid" alt="Responsive image"></p></center>
+		
+		
+		</p>
+
+
+    
+  </li>
+    <p align = "justify">
+    En mano rápida se indica que el "jugador 1" usa la tecla S, en este caso el botón de la izquierda de nuestro dispositivo. En el caso del "jugador 2", el juego indica que presione la tecla L, siendo este el botón de la derecha.</p> 
+    </ol>
+
+    
+
+
+            
+              
+			</ul>	
+
+
+
+
+
+
+
+				<h5>Resultados</h5>
+			  <p align = "justify"> Al finalizar la ronda de preguntas INKANO dara los resultados en una pantalla llamativa revelando el ganador o por otro lado, si el juego finalizo en un empate.</p>
+
+			  <center>
+			   <img src="{{url_for('static', filename='img/help/resultado.png')}}" style="width: 500px" class="logo_min img-fluid" alt="Responsive image">
+				<br><br>
+
+
+			</ul>	
+
+			<p>
+				<a href="#section1" class="btn btn-outline-primary">
+					Regresar al Inicio</a><br><br></p></center>
+
+		</div>	
+	</div>	
+	
+</div>
+
+{% endblock %}

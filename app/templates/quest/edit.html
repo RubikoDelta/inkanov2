@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+<div class="container">
+	<center><img src="{{url_for('static', filename='img/logoxs.png')}}" class="logo"></center>
+	<div class="row justify-content-center">
+
+		<div class="col-md-7 col-md-offset-1 box">
+			
+			<center><h3>Modificar pregunta</h3></center>
+			<form class="" method="post">
+
+				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+				<div class="form-group">
+				{{ render_field(form.quest, class='form-control', placeholder='Pregunta')  }}
+				</div>
+				
+				<div class="form-group">
+				{{ render_field(form.answer, class='form-control', placeholder='Respuesta')  }}
+				</div>
+				<center>
+				<button type="submit" class="btn btn-primary" name="button">				Guardar Cambios
+				</button></center>
+
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

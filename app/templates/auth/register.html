@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+{% block container %}
+
+<div class="container">
+	<center><img src="{{url_for('static', filename='img/logoxs.png')}}" class="logo"></center>
+	<div class="row justify-content-center">
+
+
+		<div class="col-md-auto col-md-offset-1 box">
+			
+			<h3>¡Crea una cuenta en Inkano!</h3>
+
+			<form class="" method="post">
+
+				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+				<div class="form-group">
+				{{ render_field(form.username, class='form-control', placeholder='Nombre de Usuario')  }}
+				</div>
+
+				<div class="form-group">
+				{{ render_field(form.email, class='form-control', placeholder='Correo electronico')  }}
+				</div>
+				
+				<div class="form-group">
+				{{ render_field(form.password, class='form-control', placeholder='contraseña') }}
+				</div>
+
+				<div class="form-group">
+				{{ render_field(form.confirm_password, class='form-control', placeholder='confirmar contraseña') }}
+				</div>
+
+				<div class="form-check">
+					{{ form.accept(class_='form-check-input') }}
+				<label class="form-check-label">Acepto los terminos y condiciones</label>
+				</div>
+				<center>
+				<button type="submit" class="btn btn-primary" name="button">
+				Registrate en Inkano
+				</button>
+				
+
+
+			</center>
+
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

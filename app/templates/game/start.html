@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+<div class="container">
+	
+	<div class="row justify-content-center">
+		<div class="col-md-auto ">
+			<img src="{{url_for('static', filename='img/logoxs.png')}}" class="logo">
+		</div>
+		<div class="col-md-auto ">
+			
+			<center>
+				<h3>Información del cuestionario:</h3></center>
+				 
+					<h5 class="card-name"><b>Nombre:</b> {{ name }}</h5>
+					<h5 class="card-name"><b>Grado:</b> {{ grade }}</h5>
+					<h5 class="card-name"><b>Materia: </b>{{ matter }}</h5>
+				
+			
+		</div>
+	</div>
+		<div class="row justify-content-center">
+		<div class="col-md-auto col-md-offset-1  box">		
+			<form class="" method="post">
+				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" >
+				<br><center><h2>Últimas configuraciones </h2></center>	
+				<div class="form-group">
+					<div class="row">
+						<div class="col">
+							{{ render_field(form.player1, class='form-control', placeholder='Nombre del jugador 1', maxlength = 10)  }}
+
+							{{ render_field(form.player2, class='form-control', placeholder='Nombre del jugador 2', maxlength = 10)  }}
+
+							{{ render_field(form.time, class='form-control')  }}
+						</div>		
+					</div>
+				</div>
+
+
+				<br><center><h2>Seleccionar Tema:</h2></center>
+				<h5>Para terminar selecciona uno de los siguientes temas para jugar.</h5>
+				<table class="table table-hover text-center">
+
+				  <tbody>
+				    <tr>
+				      <th scope="row"><p style="font-size: 20px">Creativo</p>Ideal para primaria o menor.</th>
+				      <td>
+				      	
+		                  <img src="{{url_for('static', filename='img/ownart/ninaglobos.png')}}" class="img-fluid" alt="Responsive image" style="width: 100px" />
+		               
+				      </td>
+				      <td><button type="submit" class="btn btn-success" name="button" value="tema1">
+					Utilizar este tema
+					</button></td>
+				      
+				    </tr>
+				    <tr>
+
+				      <th scope="row"><p style="font-size: 20px">Perseverante</p>Simple, para los estudiantes de básico y diversificado.</th>
+				      <td>
+				      	 <img src="{{url_for('static', filename='img/teen1xs.png')}}" class="img-fluid" alt="Responsive image" style="width: 100px" />
+				      </td>
+				      <td><button type="submit" class="btn btn-warning" name="button" value="tema2">
+					Utilizar este tema
+					</button></td>
+				      
+				    </tr>
+				    <tr>
+				      <th scope="row"><p style="font-size: 20px">Sobrio</p>Animalista para los universitarios en adelante.</th>
+				      <td>
+				      	 <img src="{{url_for('static', filename='img/uni.png')}}" class="img-fluid" alt="Responsive image" style="width: 100px" />
+				      </td>
+				      <td>
+				      <button type="submit" class="btn btn-info" name="button" value="tema3">
+					Utilizar este tema
+					</button></td>
+				      
+				    </tr>
+				  </tbody>
+				</table>
+
+			</form>
+		</div>
+	</div>
+</div>			
+
+
+
+
+{% endblock %}

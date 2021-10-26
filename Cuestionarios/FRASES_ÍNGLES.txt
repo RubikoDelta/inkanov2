@@ -1,0 +1,19 @@
+Nombre del Cuestionario: FRASES ÍNGLES
+Grado del Cuestionario: PRIMERO PRIMARIA
+Materia del Cuestionario: ÍNGLES
+Total de preguntas: 4
+
+Preguntas:
+
+1) ¿Cómo se dice "Hola" en íngles?
+Respuesta:Hi/Hello
+
+2) ¿Cómo se dice "No gracias" en íngles?
+Respuesta:No thanks / no thanks you
+
+3) ¿Qué significa "Good morning"?
+Respuesta:Buenos días
+
+4) ¿Cómo se dice "rosado" en íngles?
+Respuesta:Pink
+

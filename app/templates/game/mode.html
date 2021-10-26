@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+<div class="container">
+	<center><img src="{{url_for('static', filename='img/logoxs.png')}}" class="logo"></center>
+	<div class="row justify-content-center">
+		<div class="col-md-5 col-md-offset-1 border border-light box">
+			<center>
+			<h3>Selecciona el modo de juego:</h3>
+			<p> se necesita seleccionar el modo de juego con el cual se va a jugar.</p>
+
+			<form class="" method="post">
+
+				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+				
+				
+					<br>
+					<button type="submit" class="btn btn-info" name="button" value="mode1">Por turnos</button>
+					<br><br>
+					<p>Si quieres usar "Mano rápida", el moderador debe saber las respuestas del cuestionario. Puedes descargar los formularios en el <a href="/tests">listado de cuestionarios</a></p>
+					<button type="submit" class="btn btn-primary" name="button" value="mode2">Mano rápida</button><br><br>
+					Si aún no sabes en que consiste cada modo de juego, te recomendamos ir a la
+					<a href="/help#section3">sección de ayuda</a>
+					<br>
+
+
+			</center>
+
+			</form>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

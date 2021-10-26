@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+<div class="container">
+	<center><img src="{{url_for('static', filename='img/logoxs.png')}}" class="logo"></center>
+	<div class="row justify-content-center">
+
+
+		<div class="col-md-6 col-md-offset-1 box">
+			
+			<h3>Cuestionario:</h3>
+		<p>Finalmente selecciona el cuestionario a jugar.</p>
+			<form class="" method="post">
+
+				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+				<div class="form-group">
+				{{ render_field(form.tests, class='form-control', placeholder='cuestionario')  }}
+				
+
+				</div><center>
+				<button type="submit" class="btn btn-success" name="button">
+				Seleccionar
+				</button>
+			
+		    <a href="{{ url_for('.select_grade') }}" class="btn btn-primary">Regresar</a></center>
+
+			</form>
+			
+		</div>
+	</div>
+</div>
+
+	
+
+{% endblock %}
+
+

@@ -1,0 +1,31 @@
+Nombre del Cuestionario: GEU HUEHUETENANGO
+Grado del Cuestionario: GEU
+Materia del Cuestionario: NOCHE CULTURAL
+Total de preguntas: 8
+
+Preguntas:
+
+1) ¿Canción cultural Huehueteca?
+Respuesta:Canto a mi Huehuetenango
+
+2) ¿Cómo era conocido José Ernesto Monzón?
+Respuesta:El cantante del Paisaje
+
+3) ¿Quién escribió la sierra a los Cuchumatanes?
+Respuesta:Juan Dieguez Olaverri
+
+4) ¿Paco Pérez es un artistas huehueteco?
+Respuesta:Sí
+
+5) ¿Por qué iniciaron los “chistes chiantlecos”?
+Respuesta:-	Porqué Justo Rufino Barrios cambió la cabecera departamental a Chiantla.
+
+6) ¿Dónde se encuentran las piedras de Kap’tzin?
+Respuesta:San Juan Ixcoy
+
+7) ¿Qué celebramos los Huehuetecos el 31 de octubre, además del día de los Santos?
+Respuesta:La serenata Huehueteca
+
+8) Menciona a 3 de los 4 departamentos que colindan con Huehuetenango
+Respuesta:San Marcos, Totonicapán, Quiche, Quetzaltenango
+

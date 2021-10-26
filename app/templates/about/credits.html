@@ -1,0 +1,123 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+<div class="container">
+	
+	<div class="row justify-content-center ">
+	    <div class="col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto align-self-center p-4">
+			    <h1><img src="{{url_for('static', filename='img/logoxs.png')}}"  class="logo_min img-fluid" alt="Responsive image">Agradecimientos</h1>
+
+		</div>
+	</div>
+
+
+
+
+	<div class="row justify-content-center ">
+	    <div class="col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto align-self-center p-4">
+			  
+
+			<ul class="list-group">
+			  
+			  <h4><li class="list-group-item list-group-item-success">
+			   Arte propio / Own art</li></h4>
+
+			   			 <table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col"><center>
+			      	<img src="{{url_for('static', filename='img/ownart/ninalapiz.png')}}" class="logo_min">
+
+
+
+			      </th>
+			      <th scope="col"><center>
+			      	<img src="{{url_for('static', filename='img/ownart/ninoglobos.png')}}" class="logo_min">
+			      </th>
+
+			      <th scope="col"><center>
+			      	<img src="{{url_for('static', filename='img/ownart/ninaglobos.png')}}" class="logo_min">
+			      </th>
+
+			      
+			    </tr>
+			  </thead>
+
+			  
+			 </table>
+			 <center>
+			  <b>Dibujo por / drew by: </b><br>Byron Estuardo Aguirre Girón<br>Técnico Artístico Especializado en Artes Plasticas<br>
+			  <b>Contacto: </b>byronag79@gmail.com
+			 <br><br>
+
+			 <b>Pintado por / Painted by: </b> 	<br>Katherine Lisseth Vargas Catalán<br><a target="_blank" href="https://instagram.com/pinkat1030?utm_medium=copy_link"><img src="https://img.icons8.com/office/30/000000/instagram-new.png"/></a>
+			 </center>
+
+
+
+
+
+			  <br>
+			  <h4><li class="list-group-item list-group-item-danger">Fondos con patrón/ Design Patterns</li></h4>
+
+			  	<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col"><center>
+			      	<img src="{{url_for('static', filename='img/diagmonds.png')}}" class="logo">
+			      	<img src="{{url_for('static', filename='img/fondo_claro.png')}}" class="logo border border-warning">
+			      	<img src="{{url_for('static', filename='img/celeste.png')}}" class="logo">
+
+			      	<br>This pattern is downloaded from <a href="http://www.toptal.com/designers/subtlepatterns/" target="_blank">www.toptal.com</a>
+
+			      </th> </center></th></tr></thead></table>
+
+
+
+			  <h4><li class="list-group-item list-group-item-info">Recursos Gráficos / Graphic resources</li></h4>
+			</ul>	
+
+
+			 <table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col"><center>
+			      	<img src="{{url_for('static', filename='img/teen1xs.png')}}" class="logo_min"><br>Designed by <a target="_blank" href="http://www.freepik.com">Freepik</a></center>
+
+			      </th>
+			      <th scope="col"><center>
+			      	<img src="{{url_for('static', filename='img/uni.png')}}" class="logo_min"><br>
+			      	Designed by <a target="_blank" href="http://www.freepik.com">vectorjuice / Freepik</a></center>
+			      </th>
+			      
+			    </tr>
+			  </thead>
+			 </table>
+
+			 <center>
+			 	<br>
+			 <h6>icons by <a target="_blank" href="https://icons8.com/">Icons8</a></center>
+			 	</h6>
+
+	    
+	    
+	      
+	    
+
+
+			
+
+			
+
+
+		</div>	
+	</div>	
+
+
+</div>
+
+
+{% endblock %}

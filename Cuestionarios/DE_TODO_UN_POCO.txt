@@ -1,0 +1,37 @@
+Nombre del Cuestionario: DE TODO UN POCO
+Grado del Cuestionario: SEXTO
+Materia del Cuestionario: CIENCIAS NATURALES
+Total de preguntas: 10
+
+Preguntas:
+
+1) Según su forma de alimentarse, consideramos a los cerdos...  
+Respuesta:Herbívoros
+
+2) Según su forma de reproducirse, consideramos a las tortugas como animales...
+Respuesta:Ovíparos
+
+3) Qué tipo de animales son los murciélagos
+Respuesta:Mamíferos
+
+4) ¿Los peces son animales vertebrados o invertebrados?
+Respuesta:Vertebrados
+
+5) ¿Cuántas patas tienen todos los arácnidos?
+Respuesta:Tienen 8 patas
+
+6) ¿Cómo se llama el proceso por el que las plantas fabrican su propio alimento?
+Respuesta:Fotosíntesis
+
+7) ¿Qué parte no pertenece a la flor: cáliz, estambre, ovario, vasos liberianos, pistilo?
+Respuesta:Vasos liberianos
+
+8) ¿Dónde se encuentra corazón?
+Respuesta:En el tórax, entre los pulmones
+
+9) ¿Cómo se mide la masa de un cuerpo?
+Respuesta:Con una báscula
+
+10) ¿Cuál de esas no es una máquina simple: la polea, el plano inclinado, la grúa y la palanca?
+Respuesta:La grúa
+

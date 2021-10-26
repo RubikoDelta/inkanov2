@@ -1,0 +1,198 @@
+
+@import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
+
+
+body{
+font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+background: #2c2f69;
+background: linear-gradient(90deg, #2c2f69 0%, #2c2f69 52%, #2c2f69 100%);
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+  	width: 100vw;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo{
+
+    width: 200px;
+}
+
+.logo_min{
+
+    width: 110px;
+}
+
+.jumbotron {
+  height:100%;
+  width:100%;
+
+}
+.container {
+  width:1025px;
+}
+.jumbotron .container {
+  max-width: 100%;
+} 
+
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+
+/** 
+ * Fireworks animation by: MinzCode
+ * youtube channel: https://www.youtube.com/channel/UCknjk_lWCHNT1UFBGCgHTdg
+ * - Source Code Link -
+https://codepen.io/MinzCode/pen/abmwmOG **/
+
+
+.firework {
+	position: absolute;
+}
+.explosion {
+	position: absolute;
+	left: -2px;
+	bottom: 0;
+	width: 4px;
+	height: 80px;
+	transform-origin: 50% 100%;
+	/* background-color: rgba(0,0,0,.2); */
+	overflow: hidden;
+}
+.explosion:nth-child(1) {
+	transform: rotate(0deg) translateY(-15px);
+}
+.explosion:nth-child(2) {
+	transform: rotate(30deg) translateY(-15px);
+}
+.explosion:nth-child(3) {
+	transform: rotate(60deg) translateY(-15px);
+}
+.explosion:nth-child(4) {
+	transform: rotate(90deg) translateY(-15px);
+}
+.explosion:nth-child(5) {
+	transform: rotate(120deg) translateY(-15px);
+}
+.explosion:nth-child(6) {
+	transform: rotate(150deg) translateY(-15px);
+}
+.explosion:nth-child(7) {
+	transform: rotate(180deg) translateY(-15px);
+}
+.explosion:nth-child(8) {
+	transform: rotate(210deg) translateY(-15px);
+}
+.explosion:nth-child(9) {
+	transform: rotate(240deg) translateY(-15px);
+}
+.explosion:nth-child(10) {
+	transform: rotate(270deg) translateY(-15px);
+}
+.explosion:nth-child(11) {
+	transform: rotate(300deg) translateY(-15px);
+}
+.explosion:nth-child(12) {
+	transform: rotate(330deg) translateY(-15px);
+}
+
+.explosion::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	height: 40px;
+	background-color: #f5cf52;
+}
+@keyframes explosion {
+	0% {
+		top: 100%;
+	}
+	33%, 100% {
+		top: -50%;
+	}
+}
+
+#firework1 {
+	left: 50%;
+	top: 50%;
+	transform: scale(1);
+}
+#firework1 .explosion::before {
+	animation: explosion 2s ease-in-out infinite;
+}
+
+#firework2 {
+	left: 40%;
+	top: 45%;
+	transform: scale(.7);
+}
+#firework2 .explosion::before {
+	animation: explosion 2s .6s ease-in-out infinite;
+}
+
+#firework3 {
+	left: 60%;
+	top: 65%;
+	transform: scale(.4);
+}
+#firework3 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
+}
+
+
+
+/** 
+ * Happy Text
+ * HTML and CSS happy text effect.
+ * Made by Bennett Feely
+ * December 6, 2014 
+ * https://codepen.io/bennettfeely/pen/CkHng/
+**/
+
+
+h1 {
+ font-size:xx-large ;
+ font:bold 7.5vw/1.6 'Signika', sans-serif;
+ user-select:none;
+}
+
+h1 span { display:inline-block; animation:float .2s ease-in-out infinite; }
+ @keyframes float {
+  0%,100%{ transform:none; }
+  33%{ transform:translateY(-1px) rotate(-2deg); }
+  66%{ transform:translateY(1px) rotate(2deg); }
+}
+body:hover span { animation:bounce .6s; }
+@keyframes bounce {
+  0%,100%{ transform:translate(0); }
+  25%{ transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+  50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+}
+
+span:nth-child(4n) { color:hsl(50, 75%, 55%); text-shadow:1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); }
+span:nth-child(4n-1) { color:hsl(135, 35%, 55%); text-shadow:1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); }
+span:nth-child(4n-2) { color:hsl(155, 35%, 60%); text-shadow:1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); }
+span:nth-child(4n-3) { color:hsl(30, 65%, 60%); text-shadow:1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); }
+
+h1 span:nth-child(2){ animation-delay:.05s; }
+h1 span:nth-child(3){ animation-delay:.1s; }
+h1 span:nth-child(4){ animation-delay:.15s; }
+h1 span:nth-child(5){ animation-delay:.2s; }
+h1 span:nth-child(6){ animation-delay:.25s; }
+h1 span:nth-child(7){ animation-delay:.3s; }
+h1 span:nth-child(8){ animation-delay:.35s; }
+h1 span:nth-child(9){ animation-delay:.4s; }
+h1 span:nth-child(10){ animation-delay:.45s; }
+h1 span:nth-child(11){ animation-delay:.5s; }
+h1 span:nth-child(12){ animation-delay:.55s; }
+h1 span:nth-child(13){ animation-delay:.6s; }
+h1 span:nth-child(14){ animation-delay:.65s; }

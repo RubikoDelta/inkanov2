@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+
+<div class="container">
+	<center><img src="{{url_for('static', filename='img/logoxs.png')}}" class="logo"></center>
+	<div class="row justify-content-center">
+
+		<div class="col-md-6 col-md-offset-1 box">
+			
+			<center><h3>Nueva pregunta</h3></center>
+
+			<form class="" method="post">
+
+				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+				<div class="form-group">
+				{{ render_field(form.quest, class='form-control', placeholder='Pregunta')  }}
+				</div>
+				
+				<div class="form-group">
+				{{ render_field(form.answer, class='form-control', placeholder='Respuesta')  }}
+				</div>
+				<center>				<button type="submit" class="btn btn-primary" name="button">
+				Siguiente pregunta
+				</button>
+
+				
+
+				<a class="btn btn-danger" href="{{ url_for('.delete_test', test_id=id_int) }}" role="button" onclick="return ConfirmDelete">Cancelar cuestionario</a>
+				</center>
+
+				
+
+			</form>
+		</div>
+	</div>
+</div>
+{% block scripts %}
+
+<script type="text/javascript">
+	function ConfirmDelete()
+	{
+		var respuesta = confirm("El cuestionario actual se borrará en su totalidad.");
+
+		if (respuesta == true)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+</script>
+{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+Nombre del Cuestionario: GEU CENTRAL
+Grado del Cuestionario: GEU
+Materia del Cuestionario: NOCHE CULTURAL
+Total de preguntas: 8
+
+Preguntas:
+
+1) ¿Cuál es el nombre del teatro nacional y a qué animal emula su forma?
+Respuesta:Centro Cultural Miguel Ángel Asturias, emula a un jaguar sentado.
+
+2) ¿Cuál es el nombre de los volcanes conocidos como "Gemelos" en el departamento de Chimaltenango?
+Respuesta:El Acatenango y de Fuego.
+
+3) ¿Por qué deporte es conocido el mixqueño Doroteo Guamuch?
+Respuesta:Atletismo.
+
+4) ¿Cuál es el platillo típico del municipio de Sololá?
+Respuesta:Pulique
+
+5) ¿Cuál es el nombre del lugar turístico usado como pasarela de un convento y es patrimonio de la humanidad por la UNESCO?
+Respuesta:El Arco de Santa Catalina.
+
+6) ¿Qué edificio fue inaugurado para el cumpleaños de Jorge Ubico y es conocido como 'el Guacamolón'?
+Respuesta:El Palacio Nacional de la Cultura
+
+7) ¿Cuál es el lugar y fecha de la primera universidad de Guatemala?
+Respuesta:Ciudad de Antigua Guatemala, el 31 de enero 1676.
+
+8) ¿Cómo se llama el lugar turístico en la av. Simeón Cañas, donde se puede ver TODA GUATEMALA?
+Respuesta:El Mapa en relieve
+

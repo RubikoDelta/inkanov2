@@ -1,0 +1,156 @@
+body{
+
+    background: #fff;
+    background-image: url("/static/img/herringbone.png"); 
+    background-repeat: repeat;
+
+
+}
+
+body.#fondo2{
+
+    background: #fff;
+    background-image: url("/static/img/fondo_claro.png"); 
+    background-repeat: repeat;
+
+
+}
+
+
+footer {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  color: white;
+}
+
+
+.box {
+  
+ 
+ padding: 20px 15px 15px 15px;
+  background: linear-gradient(#000, #000) transparent;
+  background: rgba(255, 255, 255, .6);
+  
+}
+
+
+.box_table {
+  
+  background: linear-gradient(#000, #000) transparent;
+  background: rgba(255, 255, 255, 0.7);
+  
+}
+
+.box_gray {
+  
+  background: linear-gradient(#000, #000) transparent;
+  background: rgba(0, 0, 0, 0.1);
+  
+}
+
+.box_black {
+  
+  background: linear-gradient(#000, #000) transparent;
+  background: rgba(0, 0, 0, 0.3);
+  
+}
+.logo{
+
+    width: 200px;
+}
+
+.logo_min{
+
+    width: 110px;
+}
+
+
+
+a.boton-about, a.boton-credits, a.boton-help, 
+a.boton-game, a.boton-tests {
+  font:bold 18px Arial;
+  text-decoration:none;
+  color:black;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  transition:background 1s, color 1s;
+}
+ a.boton-about:hover{
+  background:yellow ;
+    color:#000;
+    transition:border 1s, color 1s;  
+ }
+
+ a.boton-help:hover{
+  background:orange ;
+    color:#000;
+    transition:border 1s, color 1s;  
+ }
+
+a.boton-game:hover{
+  background:red ;
+    color:#000;
+    transition:border 1s, color 1s;  
+ }
+
+a.boton-tests:hover{
+  background:greenyellow ;
+    color:#000;
+    transition:border 1s, color 1s;  
+ }
+a.boton-credits:hover{
+  background:pink ;
+    color:#000;
+    transition:border 1s, color 1s;  
+ }
+
+ 
+
+select {
+  // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  // Additional resets for further consistency
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 85%;
+  cursor: inherit;
+  line-height: inherit;
+  height: 30px;
+  font-family: Arial;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+
+.caption {
+padding: 0;
+width: 100%;
+position: relative;
+}
+.caption img {
+width: 100%;
+height: auto;
+display: block;
+padding: 0;
+border: 0;
+}
+.caption::before {
+content: attr(title);
+position: absolute;
+background: #EAF200; /* Color de fondo */
+background: rgba(0, 0, 0, 0.6); /* Color de fondo en RGBA */
+color: #fff; /* Color del texto */
+font-size: 9px; /* Tamaño del texto */
+padding: 5px;
+right: 0;
+bottom: 0;
+left: 0;
+text-align: center;
+z-index: 1;
+}

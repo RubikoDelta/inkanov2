@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+<div class="container">
+	
+	<div class="row justify-content-center ">
+	    <div class="col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto align-self-center p-4">
+			    <h1><img src="{{url_for('static', filename='img/logoxs.png')}}"  class="logo_min img-fluid" alt="Responsive image">
+                    Dispositivo Físico para mano rápida</h1>
+
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto align-self-center p-2">
+			<a class="btn btn-success px-3" href="#section1">¿Qué es?</a>
+				<a class="btn btn-danger px-3" href="#section2">Crea tu propio dispositivo</a>
+				
+		</div>
+	</div>
+
+
+	<div class="row justify-content-center ">
+	    <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 align-self-center p-4 box">
+			  
+
+			<ul class="list-group">
+			  
+			  <h4><li class="list-group-item list-group-item-success"> 
+                <A name="section1"></A>
+			    Dispositivo Físico para Mano Rápida</li></h4>
+			  
+                <h5>¿Qué es?</h5>
+
+                <p align = "justify">La finalidad de este objeto físico es tener una manera más dinámica y divertida para jugar el modo "mano rápida", logrando una interacción directa con los jugadores y la herramienta. El dispositivo se usará como dos botones físicos y llamativos para que los dos jugadores o equipos participantes puedan oprimir su botón correspondiente para tener la oportunidad de responder antes.</p>
+                
+                 <br><br>
+                 <center>
+
+                <img src="{{url_for('static', filename='img/help/juegonuevoboton.png')}}" style="width: 250px" class="logo_min img-fluid" alt="Responsive image">
+              </center>
+                <br><br>
+                
+                <p align = "justify">Dicho dispositivo está hecho con un teclado reciclado, tecnología de impresión 3D y un poco de creatividad para personalizar dicho dispositivo.</p>
+
+				<A name="section2"></A>
+			  <h4><li class="list-group-item list-group-item-danger">
+                  Crear tu propio dispositivo</li></h4>
+			  
+<h5> Recursos a utilizar: </h5><p>
+<ol>
+    <li>teclado para reciclar.</li>
+    <li>modelo 3D de los dos botones. </li>
+    <li>servicio de impresión 3D.</li>
+    <li>pintura.</li>
+    <li>Material para pegar o asegurar como silicona o cinta doble cara.</li>
+    <li>Una hoja tamaño oficio de un papel duro como lino o cartón delgado reciclado.</li>
+  </ol></p>
+  
+
+  <h5> Recursos que puedes descargar:</h5> 
+
+<p>
+  <ol>
+    <li>pack de calcomanías INKANO</li>
+    <li>fondo de patrón INKANO</li>
+    <li>diseños de botones para imprimir (Estos pueden ser modificados y distribuidos libremente)</li>
+  </ol>
+</p>
+<a name='section3'></a>
+<h5>Los recursos están disponibles en el siguiente enlace:</h5> 
+<br><br><center>
+<a target="_blank" href="https://drive.google.com/drive/folders/1ytswEAIuU1ZSSNWcTdGrCj-9NQVgcNec?usp=sharing"><img src="{{url_for('static', filename='img/descarga.png')}}"/></a>
+<br><br></center>
+
+<h5>Pasos:</h5>
+
+
+    <ol >
+      <li ><p align = "justify">Ya teniendo el teclado a reciclar lo primero es quitar la mayoría de sus teclas. Dejar las teclas "A", "S" Y "Z"; en el lado derecho 
+        la tecla "L", "K" y ";".<br><br>
+
+        
+        Se debe limpiar el teclado si en dado caso se necesite. El teclado debe quedar como la imagen de 
+        referencia a continuación.</p></li><br>
+        <br><center>
+        <img src="{{url_for('static', filename='img/teclado1.png')}}" style="width: 500px" class="logo_min img-fluid" alt="Responsive image">
+      </center>
+        <br><br>
+      <li><p align = "justify">Para mejorar el aspecto del dispositivo, medimos el rectángulo vació de nuestro teclado y recortamos nuestra hoja de lino o cartón para que encaje lo mejor posible en el área vacía del teclado. Recuerda también que debes cortar el espacio de las teclas que dejamos en dicho teclado. En este ejemplo se usó papel lino y se le agregó papel calcomanía que tenía impreso con el fondo que se proporciona en la carpeta de descarga. Ya tapado las partes sin teclas, el papel o cartón estará apoyado en las partes donde iban sujetas las teclas retiradas. Si quieres asegurarlo de una mejor manera puedes usar silicona caliente o cinta doble cara.</p></li><br>
+      <br><center>
+      <img src="{{url_for('static', filename='img/teclado1.png')}}" style="width: 500px" class="logo_min img-fluid" alt="Responsive image">
+    </center>
+      <br><br>
+      <li><p align = "justify">Si no tienes a tu disposición un servicio de impresión 3D, puedes encontrar otras alternativas como por ejemplo hacer los botones con duroport o foamy moldeable ¡el cielo es él limite!. En la siguiente imagen se muestran las medidas si las necesitas.</p>
+        <br>
+        <br> <center><img src="{{url_for('static', filename='img/boton.png')}}" style="width: 500px" class="logo_min img-fluid" alt="Responsive image">
+         <br><br></center>
+         <p align = "justify"> Si tienes a tu disposición el servicio de impresión 3D el archivo con el diseño original de los botones está en la
+           <a href="#section3">carpeta de recursos</a> que se compartió más arriba. Si quieres adaptar o modificar el diseño te dejamos el enlace a Tinkercad , la cual es una herramienta online para diseñar modelos 3D, una de sus ventajas es que no necesitas descargar ni instalar otros programa, solo se necesita registrarse en la página y podrás editar a tu gusto el diseño original del botón. Además te proporcionaremos una guía si necesitas ayuda para utilizar Tinkercad. </p>
+          <center>
+          <a target="_blank" href="https://www.tinkercad.com/things/jdzkWnoU4RZ"><img src="{{url_for('static', filename='img/edita.png')}}"/></a>
+          <br><br>
+          <a target="_blank" href="https://of3lia.com/tinkercad-tutorial-completo/"><img src="{{url_for('static', filename='img/guia.png')}}"/></a>
+          <br></center>
+         <br>
+         Ya con los botones hechos, pintados y personalizados (si se necesitó) estos irán encima de las teclas que dejamos descubiertos. Si usaste los modelos 3d estos se adaptaran de una mejor forma a las teclas, si no puedes asegurar tus botones con silicona caliente o cinta doble cara por ejemplo. Ya asegurados los botones el dispositivo está listo para conectarlo a tu computadora y poder jugar "mano rápida".
+        </p>
+    
+  </li>
+    <li><p align = "justify">
+    En mano rápida se indica que el "jugador 1" usa la tecla S, en este caso el botón de la izquierda de nuestro dispositivo. En el caso del "jugador 2", el juego indica que presione la tecla L, siendo este el botón de la derecha.</p> </li>
+    </ol>
+
+    
+
+
+            
+              
+			</ul>	
+
+
+		</div>	
+	</div>	
+	
+</div>
+
+{% endblock %}

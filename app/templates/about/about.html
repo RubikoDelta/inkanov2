@@ -1,0 +1,110 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+<div class="container">
+	<center>
+	<div class="row justify-content-start ">
+
+		<div class="col-md-2 align-self-center">
+			<img src="{{url_for('static', filename='img/logoxs.png')}}"  class="logo img-fluid" alt="Responsive image">
+		</div>
+
+		<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 align-self-center p-3">
+
+		<div class="card text-white bg-primary mb-12" style="max-width: 20rem;">
+		  <div class="card-body">
+		    <h5 class="card-title">¿Qué es Inkano?</h5>
+		    <p class="card-text text-white" align="justify">Inkano consiste en una herramienta auxiliar para el desarrollo del área cognitiva para medir los conocimientos de los estudiantes a través de una trivía sobre un tema en específico; esta contara con un proceso amigable y no convencional para el alumno.</p>
+		  </div>
+		</div>
+
+
+		</div>
+	
+
+	    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 align-self-center p-3">
+
+			<div class="card text-white bg-success mb-12" style="max-width: 20rem;">
+			  <div class="card-body">
+			    <h5 class="card-title">¿Por qué "Inkano"?</h5>
+			    <p class="card-text text-white" align="justify">La palabra <b>Inkano</b> significa <b>"Yo aprendo"</b>, esta viene de la lengua maya chortí o ch'orti', cultura la cual encontramos en los municipios de Jocotán y Camotán en el departamento de Chiquimula, Guatemala.</p>
+			  </div>
+			</div>
+	    </div>
+
+	    <div class="col-md-2 align-self-center ">
+	    <div class='caption' title='Mujeres chorti (Foto: Carlos Zaparolli)'>
+	      <img src="{{url_for('static', filename='img/chorti1.jpg')}}" class="logo img-fluid rounded-circle"></div>
+	    </div>
+
+	</div>	
+
+<br>
+
+	<div class="card text-white bg-danger mb-12" style="max-width: 30rem;">
+			  <div class="card-body">
+			    <h1 class="card-title">Equipo Inkano:</h1>
+			    
+
+			  </div> </div>
+
+<div class="row justify-content-center">
+
+
+	    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 align-self-center p-3">
+
+			<div class="card text-white bg-warning mb-12" style="max-width: 50rem;">
+			  <div class="card-body">
+			    <h5 class="card-title">Diego Aguirre</h5>
+			    <br>
+			    	<img src="{{url_for('static', filename='img/diego.png')}}" class="logo_min img-fluid rounded-circle">
+
+			    	<p class="card-text text-white" align="justify">
+			    	Estudiante de ingenieria en ciencias y sistemas en Cunori. </p><p>Programador, diseñador y administrador del proyecto INKANO.</p><a href="https://twitter.com/diego21i"><img src="https://img.icons8.com/ios-glyphs/30/000000/twitter--v1.png"/></a>
+
+			   
+			    	
+
+			    	
+
+			  </div>
+			</div>
+	    </div>
+
+	    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 align-self-center p-3">
+
+			<div class="card text-white bg-warning mb-12" style="max-width: 50rem;">
+			  <div class="card-body">
+			    <h5 class="card-title"> MBA. Samy Pinto</h5><br>
+
+			    <img src="{{url_for('static', filename='img/inga.jpeg')}}" class="logo_min img-fluid rounded-circle"><br><p class="card-text text-white" align="justify">Docente en la carrera de ingenieria de ciencias y sistemas en Cunori.</p>
+
+			    <center>
+			    <p class="card-text text-white" align="justify">
+			    	Supervisora y asesora del proyecto INKANO. 
+			    	</p></center>
+			    <br>
+			    	
+
+			  </div>
+			</div>
+	    </div>
+	</div>	
+
+
+<!--
+		<div class="card text-white bg-danger mb-12" style="max-width: 30rem;">
+			  <div class="card-body">
+			    <h1 class="card-title">Contacto:</h1>
+			  </div> 
+		</div> -->
+
+
+</center>
+</div>
+{% endblock %}
+
+

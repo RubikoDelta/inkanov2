@@ -1,0 +1,192 @@
+{% extends 'teenlayout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+{% block container %}
+
+
+
+    <header class="bg_animate">
+ 
+      <section class="banner contenedor">
+        <div class="container-fluid"> 
+          <div class="row justify-content-md-center">  
+            <div class="col-2 ">
+         
+              <!-- Score 1-->
+              
+              <div class="row "> 
+                <div class="col align-self-end box">
+                    <center>
+                   
+                        <h1 style="font-size: 15pt">Jugador 1</h1>
+                      
+                      
+                  <label style="font-size: 20pt;"> puntos: {{ score1 }}</label>
+                  </center>
+                </div>
+              </div>
+
+              <!-- Imagen 1-->  
+              <div class="row">
+                <div class="banner_img">
+                  <img src="{{url_for('static', filename='img/teen1.png')}}" />
+                </div>
+              </div> 
+          
+            </div>
+
+            <!-- Columna de enmedio -->
+            <div class="col">
+              <!--- incio pregunta -->
+
+              <div class="container box color" >
+                <div class="row justify-content-md-center">
+                  <!--- Turno -->
+                  <div class="col-md-auto text-light "> 
+                    <h1> {{ player }}</h1> 
+                  </div>    
+                </div> <!--- Fin turno -->
+              <div class="row justify-content-md-center"> 
+                <br><br>
+                <div class="col-md-auto"> <br>
+                  <center><h1>Pregunta:</h1>
+                  <h2 style="color: white "> {{ question }}  </h2> 
+                </div> </center>
+              </div><!--- Fin pregunta-->
+
+
+              <!--- incio contador -->
+              <div class="row justify-content-md-center">   
+                <div class="col-md-auto">
+                  <div id="temporizador" style="font-size: 40pt;">
+                    10
+                  </div>
+                </div> 
+              </div><!--- fin contador -->
+
+              <!--Inicio de Respuesta -->
+             <center><h1>Respuesta:</h1></center>
+              <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                  <h1  id="respuesta">{{ answer }}</h1>
+                </div>
+              </div>
+              <br>
+
+            <div class="row justify-content-md-center">
+              <div class="col-md-auto">
+                <form id="botones" class="" method="post">
+
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+                  <button type="submit" class="btn btn-success" name="boton" value="btn1">Correcto</button>
+
+                  <button type="submit" class="btn btn-danger" name="boton" value="btn2">
+                  Incorrecto</button>
+
+                </form>
+              </div>
+            </div>
+   
+
+            </div> <!--Fin Container-->
+
+        </div> <!--Fin columna de enmedio-->
+
+
+      <!--columna final-->
+    <div class="col-2">
+        
+         
+              <!-- Score 2-->
+              
+              
+              <div class="row "> 
+                <div class="col box">
+                    <center>
+                      
+                        <h1 style="font-size: 15pt">Jugador 2</h1>
+                    
+                      
+                  <label style="font-size: 20pt;"> puntos: {{ score2 }}</label>
+                  </center>
+                </div>
+              </div>
+
+
+
+              <!-- Imagen 2-->  
+              <div class="row">
+
+                <div class="banner_img">
+                  <img src="{{url_for('static', filename='img/teen2.png')}}" />
+                </div>
+              </div> 
+
+    </div>
+
+</div>
+
+                        
+                    
+                      
+                 
+        
+              
+</div>
+    
+
+
+
+
+
+          
+
+
+        </section>
+
+    </header>
+
+
+    
+
+
+
+{% block scripts %}
+<script>
+  document.getElementById("respuesta").style.opacity = "0";
+  document.getElementById("botones").style.opacity = "0";
+  function Temporizador(id, inicio, final){
+    this.id = id;
+    this.inicio = inicio;
+    this.final = final;
+    this.contador = this.inicio;
+
+    this.conteoSegundos = function(){
+      if (this.contador == this.final){
+        this.conteoSegundos = null;
+       document.getElementById("respuesta").style.opacity = "1";
+       document.getElementById("temporizador").style.opacity = "0";
+       document.getElementById("botones").style.opacity = "1";
+        return;
+      }
+
+      document.getElementById(this.id).innerHTML = this.contador--;
+      setTimeout(this.conteoSegundos.bind(this), 1500);
+    };
+  }
+
+  let temporizador = new Temporizador('temporizador', 5, 0);
+  temporizador.conteoSegundos();
+
+</script>
+
+
+{% endblock %}
+
+
+{% endblock %}
+
+
+
+

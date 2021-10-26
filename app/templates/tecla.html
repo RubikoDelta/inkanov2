@@ -1,0 +1,297 @@
+{% extends 'children_layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+{% block container %}
+
+
+
+    <header class="bg_animate">
+ 
+      <section class="banner contenedor">
+        <div class="container"> 
+          <div class="row align-items-center">  
+            <div class="col-2 ">
+         
+             
+              <!-- Score 1-->
+              
+              
+              <div class="row "> 
+                <div class="col align-self-end cloud2">
+                    <center>
+                      <div class="bubbles">
+                        <h1 style="font-size: 15pt"> player1 </h1>
+                      </div><br>
+                      
+                  <label style="font-size: 20pt;"> puntos: score1 </label>
+                  </center>
+                </div>
+              </div>
+
+
+              <!-- Imagen 1-->  
+              <div class="row">
+                <div class="banner_img">
+                  <img src="{{url_for('static', filename='img/astro.png')}}" class="img-fluid" alt="Responsive image"/>
+                </div>
+              </div> 
+          
+            </div>
+
+            <!-- Columna de enmedio -->
+            <div class="col ">
+              <!--- incio pregunta -->
+              <div class="container box">
+                <div class="row justify-content-md-center">
+                  <!--- Turno -->
+                  <div class="col-md-auto"> 
+                    <article>
+                      
+                    {% if player == 1 %}
+                    <h1 style="color: #1CA900">
+                      Turno de  player1 
+                    </h1> 
+                  {% endif %}
+                  {% if player == 2 %} 
+                    <h1 style="color: #1CA900">
+                      Turno de  player2 
+                    </h1> 
+                  {% endif %} 
+
+                      
+                    </article>
+                  
+                  </div>    
+                </div> <!--- Fin turno -->
+              <div class="row justify-content-md-center"> 
+                <br><br>
+                <div class="col-md-auto"> <br>
+                  <center><h1>Pregunta:</h1>
+                  
+
+
+                  <article>
+                      <h2 class="text"> question  </h2>
+                    </article>
+                </div> </center>
+              </div><!--- Fin pregunta-->
+
+
+              <!--- incio contador -->
+              <div class="row justify-content-md-center">   
+                <div class="col-md-auto ">
+                  <div class="contador" id="temporizador">
+                    
+                   10
+                  
+                  </div>
+                </div> 
+
+                
+
+              </div><!--- fin contador -->
+
+
+              <!--- Boton Revelar Respuesta-->
+               <button onclick="revelar()" class="btn btn-warning" id="btn_revelar">Revelar respuesta</button><br>
+               
+              <!--Inicio de Respuesta -->
+              <div class="box">
+                
+               
+             <center><h1>Respuesta:</h1></center>
+
+              <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                  <article>
+                  <h1 class="text"  id="respuesta"> answer </h1>
+                  </article>
+                </div>
+              </div>
+            </div>
+              <br>
+
+            <div class="row justify-content-md-center">
+              <div class="col-md-auto">
+                <form id="botones" class="" method="post">
+
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+                  <button type="submit" class="btn btn-success btn-lg" name="boton" value="btn1" id="boton1">Correcto</button>
+
+                  <button type="submit" class="btn btn-danger btn-lg" name="boton" value="btn2" id="boton2"> Incorrecto</button>
+                  <br>
+
+                </form>
+              </div>
+            </div>
+   
+
+            </div> <!--Fin Container-->
+
+        </div> <!--Fin columna de enmedio-->
+
+
+      <!--columna final-->
+    <div class="col-2">
+        
+         
+              <!-- Score 2-->
+              
+              
+              <div class="row "> 
+                <div class="col align-self-end cloud2">
+                    <center>
+                      <div class="bubbles">
+                        <h1 style="font-size: 15pt"> player2 </h1>
+                      </div><br>
+                      
+                  <label style="font-size: 20pt;"> puntos:  score2 </label>
+                  </center>
+                </div>
+              </div>
+
+
+
+              <!-- Imagen 2-->  
+              <div class="row">
+                <div class="banner_img">
+                  <img src="{{url_for('static', filename='img/ninof.png')}}" class="img-fluid" alt="Responsive image"/>
+                </div>
+              </div> 
+
+    </div>
+
+</div>
+
+                        
+                    
+                      
+                 
+        
+              
+</div>
+    
+
+
+
+
+
+          
+
+
+        </section>
+
+        <div class="burbujas">
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+  var player = 0;
+  var time = 10;
+ 
+
+  
+  document.getElementById("respuesta").style.opacity = "0";
+  document.getElementById("botones").style.opacity = "0";
+
+
+  function revelar() {
+  document.getElementById("respuesta").style.opacity = "1";
+  document.getElementById("temporizador").style.opacity = "0";
+  document.getElementById("botones").style.opacity = "1";
+  }
+  
+  function Temporizador(id, inicio, final){
+    this.id = id;
+    this.inicio = inicio;
+    this.final = final;
+    this.contador = this.inicio;
+
+
+    this.conteoSegundos = function(){
+      if (this.contador == this.final){
+        this.conteoSegundos = null;
+       document.getElementById("respuesta").style.opacity = "1";
+       document.getElementById("temporizador").style.opacity = "0";
+       document.getElementById("botones").style.opacity = "1";
+       document.getElementById("btn_revelar").style.opacity = "0";
+       
+        return;
+      }
+
+      document.getElementById(this.id).innerHTML = this.contador--;
+      setTimeout(this.conteoSegundos.bind(this), 1500);
+    };
+  }
+
+
+  let temporizador = new Temporizador('temporizador', time, 0);
+  temporizador.conteoSegundos();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function info(elEvento){
+
+  switch(elEvento.keyCode)
+  {
+    case 49: {
+      alert("El jugador 1 a presionado primero!"); 
+      player = 1;
+      window.location.href = "{{ url_for('.index', turno=1) }}";
+      
+      break;}
+    case 40: {alert("abajo"); break;}
+    case 39: {alert("derecha"); break;}
+    case 37: {alert("izquierda"); break;}
+  }
+
+}
+document.onkeydown = info;
+
+</script>
+
+{% endblock %}
