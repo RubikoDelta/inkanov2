@@ -13,7 +13,7 @@
 			
 			<center><h3>Nueva pregunta</h3></center>
 
-			<form class="" method="post">
+			<form class="" enctype="multipart/form-data" method="post">
 
 				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
@@ -24,9 +24,24 @@
 				<div class="form-group">
 				{{ render_field(form.answer, class='form-control', placeholder='Respuesta')  }}
 				</div>
-				<center>				<button type="submit" class="btn btn-primary" name="button">
+
+				<div class="form-group">
+				{{ render_field(form.answer1, class='form-control', placeholder='Primera respuesta erronea')}}
+				</div>
+
+				<div class="form-group">
+					{{ render_field(form.answer2, class='form-control', placeholder='Segunda respuesta erronea')}}
+				</div>
+
+				<div class="form-group">
+					{{ render_field(form.answer3, class='form-control', placeholder='Tercera respuesta erronea')}}
+				</div>
+				<!--<center>				<button type="submit" class="btn btn-primary" name="button">
 				Siguiente pregunta
-				</button>
+				</button> -->
+				<center>				<button type="submit" class="btn btn-primary" name="button" value="Upload a file">
+					Siguiente pregunta
+					</button>
 
 				
 
@@ -34,8 +49,10 @@
 				</center>
 
 				
-
+				<input type="file" name="pic" />
+				<!--<input type="submit" value="Upload a file" /> -->
 			</form>
+
 		</div>
 	</div>
 </div>

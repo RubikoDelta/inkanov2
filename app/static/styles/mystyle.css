@@ -154,3 +154,15 @@ left: 0;
 text-align: center;
 z-index: 1;
 }
+
+.center_canvas{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  border: 5px solid #FFFF00;
+  padding: 10px; 
+}
+
+.incompatible:link{
+  color: red;
+}

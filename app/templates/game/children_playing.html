@@ -16,7 +16,7 @@
             <div class="col-2 ">
          
              
-              <!-- Score 1-->
+              <!-- Score 1
               
               
               <div class="row "> 
@@ -31,7 +31,7 @@
                   </center>
                 </div>
               </div>
-
+              -->
 
               <!-- Imagen 1-->  
               <div class="row">
@@ -55,13 +55,8 @@
                   <div class="col-md-auto"> 
 
                     <article>
-                     <h1 style="color: #1CA900"> <img src="{{url_for('static', filename='img/logoxs.png')}}" class="logo_min">
-                        {% if player == 1 %} 
-                          Turno de {{ player1 }}
-                        {% endif %}  
-                        {% if player == 2 %}                     
-                         Turno de {{ player2 }}
-                        {% endif %} 
+                     <h1 style="color: #1CA900"> <img src="{{url_for('static', filename='img/logoxs.png')}}" class="logo_min">                        
+                          Turno de {{ player }}
                     </h1>
                       
                     </article>
@@ -73,11 +68,17 @@
                 <div class="col-md-auto"> <br>
                   <center><h1>Pregunta:</h1>
                   
+                  {% if image == 'error' %}
 
-
+                  {% else %}
+                    <img src="{{url_for('static', filename='uploads/'+image)}}" width="400" height="400">
+                  {% endif %}
+                  
                   <article>
                       <h2 class="text">{{ question }} </h2>
-                    </article>
+                      
+                  </article>
+
                 </div> </center>
               </div><!--- Fin pregunta-->
 
@@ -86,9 +87,7 @@
               <div class="row justify-content-md-center">   
                 <div class="col-md-auto ">
                   <div class="contador" id="temporizador">
-                    
-                   10
-                  
+                    10
                   </div>
                 </div> 
 
@@ -98,8 +97,8 @@
 
 
               <!--- Boton Revelar Respuesta-->
-               <button onclick="revelar()" class="btn btn-warning" id="btn_revelar">Revelar respuesta</button><br>
-               
+              <!--<button onclick="revelar()" class="btn btn-warning" id="btn_revelar" value=0>Revelar respuesta</button><br> -->
+              <br>
               <!--Inicio de Respuesta -->
               <div class="box">
                 
@@ -109,7 +108,7 @@
               <div class="row justify-content-md-center">
                 <div class="col-md-auto">
                   <article>
-                  <h1 class="text"  id="respuesta">{{ answer }}</h1>
+                  <h1 class="text"  id="respuesta">{{ verdadera }}</h1>
                   </article>
                 </div>
               </div>
@@ -122,12 +121,57 @@
 
                   <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
-                  <button type="submit" class="btn btn-success btn-lg" name="boton" value="btn1" id="boton1">Correcto</button>
+                  <!--<p value="8" id="temp"></p> -->
+                  <input type="hidden" name="temporizador" value="0" id="temp">
 
-                  <button type="submit" class="btn btn-danger btn-lg" name="boton" value="btn2" id="boton2"> Incorrecto</button>
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    
+                    {% if dificultad == 'Facil' %}
+                      <button type="submit"  id ="respuesta" onclick="revelar()" class="btn btn-warning" name="boton" value="{{ans1}}">{{ ans1 }}</button>
+                      <button type="submit"  id ="respuesta" onclick="revelar()" class="btn btn-warning" name="boton" value="{{answer}}">{{ answer }}</button>
+                    {% elif dificultad == 'Medio' %}
+                      <button type="submit"  id ="respuesta" onclick="revelar()" class="btn btn-warning" name="boton" value="{{ans1}}">{{ ans1 }}</button>
+                      <button type="submit"  id ="respuesta" onclick="revelar()" class="btn btn-warning" name="boton" value="{{ans2}}">{{ ans2 }}</button>
+                      <br>
+                      <button type="submit"  id ="respuesta" onclick="revelar()" class="btn btn-warning" name="boton" value="{{answer}}">{{ answer }}</button>
+                    {% else %}
+                      <button type="submit"  id ="respuesta" onclick="revelar()" class="btn btn-warning" name="boton" value="{{ans1}}">{{ ans1 }}</button>
+                      <button type="submit"  id ="respuesta" onclick="revelar()" class="btn btn-warning" name="boton" value="{{ans2}}">{{ ans2 }}</button>
+                      <br>
+                      <button type="submit"  id ="respuesta" onclick="revelar()" class="btn btn-warning" name="boton" value="{{ans3}}">{{ ans3}}</button>
+                      <button type="submit"  id ="respuesta" onclick="revelar()" class="btn btn-warning" name="boton" value="{{answer}}">{{ answer }}</button>
+                    {% endif %}
+                  </div>
+                  
+                  <!-- 
+                  <button onclick="correcto.play" type="submit" class="btn btn-success btn-lg" name="boton" data-value= 0 value="{{ answer }}" id="boton1">Correcto</button>
+
+                  <button onclick="incorrecto.play" type="submit" class="btn btn-danger btn-lg" name="boton" value="btn2" id="boton2"> Incorrecto</button>
+                  -->
+
+
+                  <script type="text/javascript">
+                    var correcto = new audio();
+                    correcto.src = "correcto.mp3";
+                    var incorrecto = new audio();
+                    incorrecto.src = "../static/sound/incorrecto.mp3"
+
+                  </script>
                   <br>
 
                 </form>
+
+                <audio id="audioMusic">
+                  <source src="correcto.mp3" type="audio/mpeg">
+                </audio>
+              
+                <script>
+                  var audio = document.getElementById("audioMusic")
+                  function bell(){
+                    audio.play();
+                  }
+                </script>
+
               </div>
             </div>
    
@@ -141,9 +185,9 @@
     <div class="col-2">
         
          
-              <!-- Score 2-->
+              <!-- Score 2
               
-              
+               
               <div class="row "> 
                 <div class="col align-self-end cloud2">
                     <center>
@@ -155,6 +199,7 @@
                   </center>
                 </div>
               </div>
+              -->
 
 
 
@@ -199,6 +244,13 @@
             <div class="burbuja"></div>
             <div class="burbuja"></div>
         </div>
+
+        
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+          <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+          <script src="{{ url_for('static', filename='js/flash.min.js') }}"></script>
     </div>
 
 
@@ -214,14 +266,20 @@
  
 
   
+  
   document.getElementById("respuesta").style.opacity = "0";
-  document.getElementById("botones").style.opacity = "0";
+  document.getElementById("botones").style.opacity = "1";
 
 
   function revelar() {
   document.getElementById("respuesta").style.opacity = "1";
   document.getElementById("temporizador").style.opacity = "0";
-  document.getElementById("botones").style.opacity = "1";
+  document.getElementById("botones").style.opacity = "0";
+    window.FlashMessage.success('Siguiente pregunta', {
+      timeout: 3000,
+      container: '.flash-container',
+      progress: true
+  });
   }
   
   function Temporizador(id, inicio, final){
@@ -243,6 +301,14 @@
       }
 
       document.getElementById(this.id).innerHTML = this.contador--;
+      document.getElementById("temp").innerHTML = this.contador;
+      document.getElementById("temp").value = this.contador;
+      //document.getElementById("btn_revelar").value = this.contador;
+      //var restante = document.getElementById("temp");
+      
+      //restante.dataset.value = this.contador;
+      //restante.setAttribute('data-value', this.contador);
+
       setTimeout(this.conteoSegundos.bind(this), 1500);
     };
   }

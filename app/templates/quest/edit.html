@@ -22,6 +22,18 @@
 				<div class="form-group">
 				{{ render_field(form.answer, class='form-control', placeholder='Respuesta')  }}
 				</div>
+
+				<div class="form-group">
+					{{ render_field(form.answer1, class='form-control', placeholder='Primera respuesta erronea')}}
+				</div>
+
+				<div class="form-group">
+					{{ render_field(form.answer2, class='form-control', placeholder='Segunda respuesta erronea')}}
+				</div>
+
+				<div class="form-group">
+					{{ render_field(form.answer3, class='form-control', placeholder='Tercera respuesta erronea')}}
+				</div>
 				<center>
 				<button type="submit" class="btn btn-primary" name="button">				Guardar Cambios
 				</button></center>

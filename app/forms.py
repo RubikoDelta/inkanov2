@@ -75,7 +75,18 @@ class QuestForm(Form):
 		validators.DataRequired(message='Campo requerido.'),
 		validators.length(min=1, max=200, message="Nombre fuera de rango")
 		])
-	
+	answer1 = StringField('Primera respuesta equivocada', [
+		validators.DataRequired(message='Campo requerido.'),
+		validators.length(min=1, max=200, message="Nombre fuera de rango")
+		])
+	answer2 = StringField('Segunda respuesta equivocada', [
+		validators.DataRequired(message='Campo requerido.'),
+		validators.length(min=1, max=200, message="Nombre fuera de rango")
+		])
+	answer3 = StringField('Tercera respuesta equivocada', [
+		validators.DataRequired(message='Campo requerido.'),
+		validators.length(min=1, max=200, message="Nombre fuera de rango")
+		])
 
 
 def choice_grade_query():
@@ -86,11 +97,13 @@ class ChoiceGradeForm(Form):
 
 class ChoiceTestForm(Form):	
 	tests = SelectField('Seleccione cuestionario', choices=[])
+	dificultad= SelectField('Seleccione el nivel de dificultad', choices=[('Facil', 'Facil'), ('Medio', 'Medio'), ('Dificil', 'Dificil')])
 
 class ChoiceMatterForm(Form):
 	matters = SelectField('Seleccione materia o curso', choices=[])
 
 class StartForm(Form):
+	"""
 	player1 = StringField('Ingresar el nombre del primer jugador, no mayor a 10 letras',  [
 		validators.length(min=3, max=10, message='el nombre se encuentra fuera de rango'),
 		validators.DataRequired(message='El nombre es requerido')
@@ -100,7 +113,7 @@ class StartForm(Form):
 		validators.length(min=3, max=10, message='el nombre se encuentra fuera de rango'),
 		validators.DataRequired(message='El nombre es requerido')
 		])
-		
+	"""
 	time = SelectField('Selecciona el tiempo máximo (en segundos) para responder a cada pregunta',
 		choices=[(5,'5'), (10,'10'), (15,'15'), (20, '20'), (25,'25'), (30,'30')])
 	

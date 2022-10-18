@@ -4,8 +4,10 @@ from flask_login import LoginManager
 from flask_bootstrap import Bootstrap
 from flask_wtf.csrf import CSRFProtect
 from flask_sqlalchemy import SQLAlchemy
+from flask_socketio import SocketIO
 
 app = Flask(__name__)
+socketio = SocketIO()
 
 db = SQLAlchemy()
 bootstrap = Bootstrap()
@@ -27,7 +29,7 @@ def create_app(config):
 	login_manager.login_message = 'Necesitas iniciar sesion'
 
 	app.register_blueprint(page)
-
+	socketio.init_app(app)
 	with app.app_context():
 		db.init_app(app)
 		db.create_all()

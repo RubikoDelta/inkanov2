@@ -1,0 +1,19 @@
+Nombre del Cuestionario: PARTES DEL CUERPO
+Grado del Cuestionario: PRIMERO
+Materia del Cuestionario: CIENCIAS
+Total de preguntas: 4
+
+Preguntas:
+
+1) Primera pregunta
+Respuesta:1
+
+2) Segunda pregunta
+Respuesta:2
+
+3) Tercera pregunta
+Respuesta:3
+
+4) Cuarta pregunta
+Respuesta:4
+

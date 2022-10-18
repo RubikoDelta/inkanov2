@@ -18,23 +18,27 @@
 					<h5 class="card-name"><b>Nombre:</b> {{ name }}</h5>
 					<h5 class="card-name"><b>Grado:</b> {{ grade }}</h5>
 					<h5 class="card-name"><b>Materia: </b>{{ matter }}</h5>
-				
+
 			
 		</div>
 	</div>
 		<div class="row justify-content-center">
-		<div class="col-md-auto col-md-offset-1  box">		
+		<div class="col-md-auto col-md-offset-1  box">
+			<br><center><h2>Nombre jugadores </h2></center>
+			<center>
+				{% for i in usuarios %}
+					<p>{{i.username}}</p>
+				{%endfor%}
+			</center>
 			<form class="" method="post">
 				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" >
 				<br><center><h2>Últimas configuraciones </h2></center>	
 				<div class="form-group">
 					<div class="row">
 						<div class="col">
-							{{ render_field(form.player1, class='form-control', placeholder='Nombre del jugador 1', maxlength = 10)  }}
+							
 
-							{{ render_field(form.player2, class='form-control', placeholder='Nombre del jugador 2', maxlength = 10)  }}
-
-							{{ render_field(form.time, class='form-control')  }}
+							{{ render_field(form.time, class='form-control')  }} 
 						</div>		
 					</div>
 				</div>
@@ -55,7 +59,6 @@
 				      <td><button type="submit" class="btn btn-success" name="button" value="tema1">
 					Utilizar este tema
 					</button></td>
-				      
 				    </tr>
 				    <tr>
 
@@ -89,5 +92,8 @@
 
 
 
-
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}

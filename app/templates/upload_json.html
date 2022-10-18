@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+
+{% block container %}
+
+<div class="container">
+	
+	<div class="row justify-content-center">
+		<div class="col-md-6 col-md-offset-1 box">
+			<center>
+				<form method="POST" enctype="multipart/form-data">
+					<div class="custom-file">
+						<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+						<input type="file" class="custom-file-input" id="customFileLang" lang="es">
+						<label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+					</div>
+					<br>
+					<br>
+					<input type = "file" name = "file" />
+					<button type="submit" class="btn btn-success" name="button">Importar cuestionario<img src="{{url_for('static', filename='img/cloud-upload.svg')}}" alt="Bootstrap"></button>
+				</form>
+			</center>
+		</div>
+	</div>
+</div>
+{% endblock %}

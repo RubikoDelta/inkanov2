@@ -1,0 +1,32 @@
+{% extends 'layoutwinner.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+{% block container %}
+<html>
+
+    
+    <br>
+    <br>
+    <br>
+    <!-- 
+    <div class="text-center space">
+        <strong class="display-2">Iniciamos en breve</strong>
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    -->
+
+    <div class="loader">
+        <div class="loader-wheel"></div>
+        <div class="loader-text"></div>
+      </div>
+    
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/flash.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</html> 
+{% endblock %}

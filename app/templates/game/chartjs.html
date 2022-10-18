@@ -1,0 +1,213 @@
+{% extends 'layoutwinner.html' %}
+{% from 'helpers/_forms.html' import render_field %}
+
+{% block container %}
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+
+    
+
+    <body>
+        <form class="form-group anuncio" method="post">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          {% if playagain == 0 %}
+            
+            {% if values[1]==values[0]%}
+              <h1 class="display-4">Ha sido un empate 😱😱😱</h1>
+            {% else %}
+              <h1 class="display-4">Te has quedado a {{values[1]-values[0]+1}} intentos de ganar</h1>
+            {% endif %}
+           
+            <hr class="my-4 divisora">
+            <button type="submit" class="btn btn-primary">Volver a intentarlo</button>
+
+          {% elif playagain == 2 %}
+            <h1 class="display-4">El ganador es {{labels[0]}}</h1>
+            <h2 class="display-4">Puntuacion {{values[0]}}</h2>
+            <hr class="my-4 divisora">
+            <button type="submit" class="btn btn-primary">Volver al home</button>
+          {% else %}
+            <h1 class="display-4"> 🎊Has ganado🎊</h1>
+            <hr class="my-4 divisora">
+            <button type="submit" class="btn btn-primary">Volver al home</button>
+          {% endif %}
+        </form>
+        <br> 
+        <br>
+        <div class="center_canvas grafica">
+          <canvas id ="bar_chart" width="800" height="600px"></canvas>
+        </div>
+
+        {% if playagain == 0 or playagain == 1 %}
+          <script>
+            var ctx = document.getElementById("bar_chart");
+            const plugin = {
+              id: 'custom_canvas_background_color',
+              beforeDraw: (chart) => {
+                const { ctx } = chart;
+                ctx.save();
+                ctx.globalCompositeOperation = 'destination-over';
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, chart.width, chart.height);
+                ctx.restore();
+              },
+
+
+
+            };
+            var bar_chart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: {{ labels | safe}},
+
+            datasets: [
+              {
+
+                label: "Puntuacion",
+                backgroundColor: ["rgba(50, 196, 48, 0.9)", "rgba(232,75,75,0.9)"],
+                borderColor: "black",
+                borderWidth:5,
+                data: {{ values | safe}}
+                                    }
+            ]
+                                },
+
+            //plugins: [plugin],
+
+            options: {
+              plugins: {
+                legend: {
+                  display: false,
+                }
+              },
+              scales: {
+
+                x: {
+                  grid: {
+                    display: false
+                  },
+
+                  ticks: {
+                    color: "white",
+                    font: {
+                      size: 30,
+                      weight: 'bold'
+                    }
+                  },
+                  display: true,
+                    title: {
+                    display: false,
+                      text: 'axe x'
+                  }
+                },
+                y: {
+                  grid: {
+                    display: false,
+                      offset: true,
+                        drawTicks: false,
+                          tickColor: "white",
+                            borderColor: "white"
+                  },
+                  display: false,
+                    title: {
+                    display: true,
+                      text: 'value'
+                  }
+                }
+
+              }
+            }
+                            });
+
+          </script>
+        {% elif playagain == 2 %}
+          <script>
+            var ctx = document.getElementById("bar_chart");
+            const plugin = {
+              id: 'custom_canvas_background_color',
+              beforeDraw: (chart) => {
+                const { ctx } = chart;
+                ctx.save();
+                ctx.globalCompositeOperation = 'destination-over';
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, chart.width, chart.height);
+                ctx.restore();
+              },
+
+
+
+            };
+            var bar_chart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: {{ labels | safe}},
+
+            datasets: [
+              {
+
+                label: "Puntuacion",
+                backgroundColor: ["rgba(243, 53, 165, 0.9)"],
+                borderColor: "black",
+                borderWidth:5,
+                data: {{ values | safe}}
+                                            }
+            ]
+                                        },
+
+            //plugins: [plugin],
+
+            options: {
+              plugins: {
+                legend: {
+                  display: false,
+                                            }
+              },
+              scales: {
+
+                x: {
+                  grid: {
+                    display: false
+                  },
+
+                  ticks: {
+                    color: "white",
+                    font: {
+                      size: 30,
+                      weight: 'bold'
+                    }
+                  },
+                  
+                  display: true,
+                    title: {
+                    display: false,
+                      text: 'axe x'
+                  }
+                },
+                y: {
+                  grid: {
+                    display: false,
+                      offset: true,
+                        drawTicks: false,
+                          tickColor: "white",
+                            borderColor: "white"
+                  },
+                  display: false,
+                    title: {
+                    display: true,
+                      text: 'value'
+                  }
+                }
+              }
+            }
+                                    });
+
+          </script>
+        {% endif %}
+    
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+          <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+</html>
+{% endblock %}

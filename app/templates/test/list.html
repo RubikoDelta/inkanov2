@@ -12,14 +12,22 @@
 			<th scope="col"> materia </th>
 			<th scope="col"> grado </th>
 			<th scope="col"> No. preguntas </th>
+			<th scope="col">
+				<div class="btn-group" role="group" aria-label="Basic example">
+					<center><a href="{{ url_for('.new_test') }}" class="btn btn-success">Agregar Cuestionario +</a></center>
+				</div>
+			</th>
 
-			<th scope="col"> <center><a href="{{ url_for('.new_test') }}" class="btn btn-success">Agregar Cuestionario +</a></center></th>
 		</tr>
 	</thead>
 	<tbody>
 		{% for test in tests %}
 		<tr>
-			<td><a href="{{ url_for('.get_test', test_id=test.id_test) }}">{{ test.name_test }}</a></td>
+			{% if test_compatibles[test.id_test] == False %}
+				<td><a href="{{ url_for('.get_test', test_id=test.id_test) }}" title="Cuestionario incompatible" class="incompatible">{{ test.name_test }}</a></td>
+			{% else %}
+				<td><a href="{{ url_for('.get_test', test_id=test.id_test) }}">{{ test.name_test }}</a></td>
+			{% endif %}
 			<td>{{ test.matter_test }}</td>
 			<td>{{ test.grade_test }}</td>
 			<td><center>{{ test.number_test }}</center></td>
@@ -30,10 +38,22 @@
 
 				<a href="{{ url_for('.delete_test', test_id=test.id_test) }}" class="btn btn-danger">Eliminar</a>				
 
-				<a href="{{ url_for('.download_test', test_id=test.id_test) }}" class="btn btn-warning">
+				{% if diccionario_id_test[test.id_test] < test.number_test %}
+					<a href="{{ url_for('.finish_test', test_id=test.id_test, restantes=test.number_test-diccionario_id_test[test.id_test])}}" class="btn btn-info">Terminar cuestionario</a>	
+				{% endif %}
+				<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 					Descargar
-				</a>
-				
+				  </button>
+				  <div class="dropdown-menu">
+					<a href="{{ url_for('.download_pdf', test_id=test.id_test) }}" class="dropdown-item" href="#">.pdf</a>
+					<a class="dropdown-item" href="{{ url_for('.download_json', test_id=test.id_test) }}">.json</a>
+					<a class="dropdown-item" href="{{ url_for('.download_test', test_id=test.id_test) }}">.txt</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Separated link</a>
+				  </div>
+			</td>
+			<td>
+
 			</td>
 		</tr>
 
@@ -41,7 +61,6 @@
 	</tbody>
 
 </table>
-
 <nav><ul class="pagination">
 	{% if pagination.has_prev %}
 	<li class="page-item">

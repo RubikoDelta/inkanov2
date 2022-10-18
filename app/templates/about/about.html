@@ -105,6 +105,21 @@
 
 </center>
 </div>
+
+<button id="send" class="btn btn-primary">Send</button>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<!--<script>
+	const socket = io('/about_us')
+
+	socket.emit('admin', 'about')
+	$('#send').on('click', function () {
+		lobby.emit('message', 'Hora de iniciar partida')
+	})
+</script> -->
+
 {% endblock %}
 
 
